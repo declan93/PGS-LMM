@@ -3,34 +3,34 @@
 source config.txt
 
 echo "Extracting samples and performing QC"
-jid1=$(sbatch --export=ALL --parsable code/EXTRACT_QC.sh)
+jid1=$(sbatch --export=ALL --parsable source/EXTRACT_QC.sh)
 
 echo "Running PCA"
-jid2=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid1" code/PCA.sh)
+jid2=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid1" source/PCA.sh)
 
 echo "Making GRM"
-jid3=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid2" code/makeGRM.sh)
+jid3=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid2" source/makeGRM.sh)
 
 echo "Creating sparse GRM for fastGWA"
-jid4=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid3" code/makeSparseGRM.sh)
+jid4=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid3" source/makeSparseGRM.sh)
 
 echo "covar files"
-jid5=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid4" -o "logs/MkCovar.out" -J "MkCovar" code/makeCovar.sh)
+jid5=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid4" -o "logs/MkCovar.out" -J "MkCovar" source/makeCovar.sh)
 
 echo "GCTA fastGWA"
-jid6=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid5" code/FastGwaFull.sh)
+jid6=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid5" source/FastGwaFull.sh)
 
 echo "polygenic score calculation"
 # For SBayesR uncomment sbayes code in PGSLOCO.sh
-jid7=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid6" code/PGSLOCO.sh)
+jid7=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid6" source/PGSLOCO.sh)
 
 echo "phenotype and LOCO PGS covars"
 #SBayes run makeSbayesPGS.sh
 #SBayes run SBayesPlink.sh jobarray
 ## uncomment and comment relevant lines in makePgsCovars.sh
-jid8=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid7" -o "logs/MkLocoCovar.out" -J "MkLocoCovar" code/makePgsCovars.sh)
+jid8=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid7" -o "logs/MkLocoCovar.out" -J "MkLocoCovar" source/makePgsCovars.sh)
 
 echo "FastGWAS PGS adjusted"
-jid9=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid8" code/FastGwaPGS.sh)
+jid9=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid8" source/FastGwaPGS.sh)
 
 
