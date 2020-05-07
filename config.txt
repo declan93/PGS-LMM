@@ -1,0 +1,51 @@
+#!/bin/bash
+
+#########FILES
+age=                      #ID Value
+centre=                   #ID Value
+batch=                    #ID Value
+sex=                      #ID Value
+SAMP=                     #FID IID Value
+GT_DIR=                   # Raw genotype data
+PHENO=                    #FID IID & and TRAIT as defined below
+
+#### VARIABLES
+
+NAME=""                   # Genotype NAMES 
+TRAIT=""                  # NAME of header of $PHENO
+PROJ=""                   # Root folder for results. 
+
+#### THRESHOLDS
+
+MAF=0.001
+MAFp=0.01
+HWE=0.0000005
+HWEp=0.00005
+GENO=0.02
+INFO=0.8
+R2=0.8
+WIND=1000
+SHIF=100
+LD=0.9
+
+#### TOOLS
+BGZIP=""
+GCTA=""
+PLINK2=""
+PRSice=""
+
+### set DIRS
+GT=${PWD}/${PROJ}/GT  # This is where intermediate Genotypes + pca files will be stored
+grm=${PWD}/${PROJ}/grm  # GRM parts and concatenated GRM
+results=${PWD}/${PROJ}/results  # GWAS results are sent here.
+traits=${PWD}/${PROJ}/traits  # traits will be stored here
+PGS=${PWD}/${PROJ}/PGS  # risk scores are here
+
+
+mkdir -p logs
+mkdir -p $GT
+mkdir -p $grm
+mkdir -p $results
+mkdir -p $traits
+mkdir -p $PGS
+
