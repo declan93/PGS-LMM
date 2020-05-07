@@ -259,16 +259,6 @@ As the genomic architecture of complex diseases is uncovered by large biobank sc
 
 Here, we set out to investigate whether including an additive PGS, estimated using a LOCO scheme, as a fixed effect in a linear mixed model has the potential to improve the power of GWAS. Our hypothesis is that the contribution of background genetic variation may not be adequately captured by a random effect, with covariance proportional to the GRM. In particular, stochastic variation resulting from SNPs with relatively large contributions to phenotypic variation may be better captured by the PGS. We tested this hypothesis in two ways. Firstly, using simulated data we tested for an improvement in power and precision on the task of recovering known causal variants as a function of study size, number of causal variants and trait heritability. In addition, we applied the method to standing height data from the UK Biobank and determined the number and characteristics of additional variants that were detected. For an objective assessment of performance on real data, where the true associations are unknown, we divided the data into test and training sets and predicted the phenotype in the test set. The improved performance on the critical task of complex phenotype prediction illustrates the utility of the PGS as a means of accounting for background genetic variance.
 
-
-\section*{Section title}
-Text for this section \ldots
-\subsection*{Sub-heading for section}
-Text for this sub-heading \ldots
-\subsubsection*{Sub-sub heading for section}
-Text for this sub-sub-heading \ldots
-\paragraph*{Sub-sub-sub heading for section}
-Text for this sub-sub-sub-heading \ldots
-
 \section*{Results}
 We simulated data to evaluate the impact of including the PGS as a fixed effect in GWAS. The simulations consisted initially of a normally-distributed continuous trait in 100,000 individuals. The trait had a narrow-sense heritability ($h^2$) of 0.5 and there were 1,000 causal SNPs with normally-distributed effects on the trait (see Methods for details). We incorporated the LOCO PGS as a fixed effect in a linear mixed model using GCTA fastGWA \cite{jiang2019resource} (a method we refer to as PGS-LMM) and found a substantial improvement in power to detect the known causal SNPs (Fig 1). In 100 simulations we found that the PGS-LMM recovered, on average, 76 additional causal variants below the conventional P-value threshold of $5x10^{-8}$ compared to fastGWA (Fig 1), corresponding to relative increases in power of 17\%. The contribution to phenotype variance of off-target SNPs can also be modelled as a random effect in a linear mixed model. This approach is applied by BOLT-LMM, which uses a normal mixture random effect, with a component corresponding to SNPs with large effects; however, PGS-LMM achieved higher power than BOLT-LMM, suggesting that first calculating a PGS from an initial GWAS and including this as a fixed effect in a mixed model provides an improved means to control for off-target genetic effects (Fig 1).  \par 
 
