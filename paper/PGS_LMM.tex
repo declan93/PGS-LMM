@@ -44,7 +44,7 @@
 %%% loading packages, author definitions
 
 %\documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and comment line below
-\documentclass[doublespacing,linenumbers]{bmcart}
+\documentclass[doublespacing]{bmcart}
 
 %%% Load packages
 %\usepackage{amsthm,amsmath}
@@ -55,7 +55,7 @@
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
 %\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
 
-
+\usepackage{lineno}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
 %%  If you wish to display your graphics for   %%
@@ -70,6 +70,7 @@
 %%  submitted article.                         %%
 %%                                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 %\def\includegraphic{}
@@ -242,6 +243,8 @@ Linear mixed models are used to correct for sample structure in genome wide asso
 %%%%%%%%%%%%%%%%
 %% Background %%
 %%
+
+\linenumbers
 \section*{Bachground}
 
 Linear mixed effects models (LMMs) are routinely applied to detect associations between SNPs and phenotypes in genome-wide association studies (GWAS). The contribution of a given SNP to the phenotype is modelled as a fixed effect, while the contribution of all other SNPs is modelled as a random effect, with the covariance structure of this random effect corresponding to the genetic relationships between the individuals in the study. In order to avoid including the component of the genetic relatedness contributed by variants in linkage disequilibrium with the tested variant, the genetic relationship matrix (GRM) is calculated using an LD-pruned set of variants \cite{yu2006unified,emma}. Originally these methods assumed that a large number of SNPs may each make small contributions to the phenotypic variation, such that the phenotypic contribution of the genetic background could be modelled as a multivariate normal (with covariance matrix proportional to the GRM) \cite{emma, emmax,gemma,fastlmm}. Newer implementations of these models have allowed for the possibility of a combination of SNPs with effect sizes close to zero as well as some SNPs with large effect sizes. This can be done by modelling the effect sizes of background SNPs as a mixture of normal distributions, with a proportion, $p << 1$, of SNPs with large effect sizes and the remainder with effect sizes close to zero. This results in a ‘spike and slab’ mixture model for the SNP effect sizes \cite{BOLT} (the spike corresponds to a normal component with small variance and the slab corresponding to a second normal component with large variance). Implementations of these normal mixture models have been developed that can be applied to biobank-scale data \cite{boltukb}. In addition to controlling for the direct genetic effects of other SNPs on the phenotype LMM methods have also been shown to account well for subtle population structure and cryptic relatedness between individuals in the sample population \cite{yu2006unified,emma,emmax,gemma,price2010new}.  
