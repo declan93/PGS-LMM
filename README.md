@@ -2,7 +2,7 @@
 
 Example pipeline for implementing the PGS-LMM method defined in *Publication* 
 
-Edit the config file to set paths to the required files and software. 
+Edit the config file to set absolute paths to the required files and software. 
 
 Pipeline depends on `plink2`,`bgzip`,`fastGWA` & `PRSice2` and is written for a HPC system running SLURM.
 
