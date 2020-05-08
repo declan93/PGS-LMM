@@ -41,6 +41,7 @@ $<$1\% & 126210 & 1096 & 30682 & 650 & 2.4 & 2.209-2.693 & 5.9E-65 \\
 20-50\% & 56104 & 71202 & 15767 & 15565 & 0.78 & 0.7588-0.7974 & 6.2E-88 \\ 
    \hline
 \end{tabular}}
+\thispagestyle{empty}
 \end{table}
 
 
@@ -109,20 +110,29 @@ Muscle Skeletal & 2049 & 0.021 & 0.038 & 0.011 & 0.025 \\
   Spleen & 2049 & -0.021 & -0.038 & 0.013 & 0.95 \\ 
    \hline
 \end{tabular}
+\thispagestyle{empty}
 \end{table}
 
 \begin{table}[h!]
 \renewcommand{\thetable}{S\arabic{table}}
 \centering
-\caption{Prediciton results for 74,000 top independent loci in each method}
-\resizebox{\textwidth}{!}{\begin{tabular}{rlrrr}
+\tiny
+\caption{Prediction of height using 74,000 most significant independent loci and the corresponding intersecting set of variants for each method}
+\resizebox{.65\textwidth}{!}{\begin{tabular}{rlrr}
   \hline
-Method & R2 & Coefficient & Se & NSNP \\ 
+Method & $R^2$ & se \\ 
   \hline
-fastGWA & 0.1296 & 29886 &   264 & 74000 \\ 
-  PGS-LMM & 0.1385 & 35111 &   298 & 74000 \\ 
+  \textbf{Top 74,000 variants}\\
+fastGWA & 0.1296 & 0.0021 \\ 
+  PGS-LMM & 0.1385 & 0.0022 \\ 
+   \hline
+
+   \textbf{37,514 intersecting variants} \\
+fastGWA & 0.1177 & 0.0021\\ 
+  PGS-LMM & 0.1192 & 0.0021 \\ 
    \hline
 \end{tabular}}
+\thispagestyle{empty}
 \end{table}
 
 \end{document}
