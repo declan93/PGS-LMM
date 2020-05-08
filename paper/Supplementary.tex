@@ -13,12 +13,12 @@
 
 \begin{figure}[h!]
   \includegraphics[width=0.85\textwidth]{images/SFig2.png}
-  \caption{Venn diagram of significant variants identified by both FastGWA and PGS-LMM}
+  \caption{Venn diagram of significant variants identified by both FastGWA and PGS-LMM }
 \end{figure}
 
 \begin{figure}[h!]
   \includegraphics[width=0.85\textwidth]{images/SFig3.png}
-  \caption[MAF plot]{Minor allele frequency of significant variants identified by the fastGWA method (red), MAF of variants identified by PGS-LMM (green) and variants identified by the PGS-LMM method and not fastGWA (blue)}
+  \caption{Minor allele frequency of significant variants identified by the fastGWA method (red), MAF of variants identified by PGS-LMM (green) and MAF of variants identified by the PGS-LMM method but not fastGWA (blue).}
 \end{figure}
 
 \begin{figure}[h!]
@@ -36,109 +36,113 @@
   \caption{Proportion of causal variants identified by BOLT-LMM, BOLT-LMM PGS-LMM, fastGWA and fastGWA PGS-LMM across 100 simulations}
 \end{figure}
 
-
-
-
-\begin{table}[h!]
+\begin{table}[ht]
 \renewcommand{\thetable}{S\arabic{table}}
 \centering
 \caption{Fishers exact test for expected number of variants in each minor allele frequency bin}
-\resizebox{1.2\textwidth}{!}{\hskip-4.0cm\begin{tabular}{rlrrrrrrrlr} 
+\resizebox{1.2\textwidth}{!}{\begin{tabular}{rlrrrrrlr}
   \hline
- & Bin & Prop. fastGWA & Tot. fastGWA & Total fastGWA bin & Prop. PGS-LMM & Tot. PGS-LMM & Tot. PGS-LMM bin & OR & CI & P.value \\ 
+ Bin & fastGWA & fastGWA bin & PGS-LMM & PGS-LMM bin & OR & CI & P.value \\ 
   \hline
-1 & $<$1\% & 0.01 & 126210 & 1096 & 0.02 & 30682 & 650 & 2.44 & 2.209-2.693 & 0.00 \\ 
-  2 & 1-5\% & 0.10 & 115763 & 11543 & 0.10 & 28598 & 2734 & 0.96 & 0.9175-1.002 & 0.06 \\ 
-  3 & 5-10\% & 0.14 & 111480 & 15826 & 0.15 & 27312 & 4020 & 1.04 & 0.9988-1.076 & 0.06 \\ 
-  4 & 10-20\% & 0.28 & 99667 & 27639 & 0.36 & 22969 & 8363 & 1.31 & 1.276-1.351 & 0.00 \\ 
-  5 & 20-50\% & 1.27 & 56104 & 71202 & 0.99 & 15767 & 15565 & 0.78 & 0.7588-0.7974 & 0.00 \\ 
+$<$1\% & 126210 & 1096 & 30682 & 650 & 2.4 & 2.209-2.693 & 5.9E-65 \\ 
+1-5\% & 115763 & 11543 & 28598 & 2734 & 0.96 & 0.9175-1.002 & 0.06 \\ 
+5-10\% & 111480 & 15826 & 27312 & 4020 &   1 & 0.9988-1.076 & 0.057 \\ 
+10-20\% & 99667 & 27639 & 22969 & 8363 & 1.3 & 1.276-1.351 & 4.4E-77 \\ 
+20-50\% & 56104 & 71202 & 15767 & 15565 & 0.78 & 0.7588-0.7974 & 6.2E-88 \\ 
    \hline
 \end{tabular}}
+\thispagestyle{empty}
 \end{table}
+
 
 \begin{table}[h!]
 \vspace{-7.5em}%
 \renewcommand{\thetable}{S\arabic{table}}
 \centering
 \caption{Gene-property analysis results}
-\begin{tabular}{rlrrrrr}
+\begin{tabular}{lrrrrr}
   \hline
- & Tissue & N Genes & Beta & Beta Std. & Se & P \\ 
+Tissue & NGenes & Beta & Beta Std & Se & P \\ 
   \hline
-1 & Muscle Skeletal & 2049 & 0.02 & 0.04 & 0.01 & 0.02 \\ 
-  2 & Esophagus Muscularis & 2049 & 0.03 & 0.05 & 0.02 & 0.05 \\ 
-  3 & Artery Tibial  & 2049 & 0.02 & 0.04 & 0.01 & 0.06 \\ 
-  4 & Esophagus Gastroesophageal J.. & 2049 & 0.03 & 0.05 & 0.02 & 0.08 \\ 
-  5 & Colon Sigmoid & 2049 & 0.03 & 0.05 & 0.02 & 0.09 \\ 
-  6 & Artery Aorta  & 2049 & 0.02 & 0.04 & 0.01 & 0.09 \\ 
-  7 & Kidney Medulla & 2049 & 0.02 & 0.03 & 0.02 & 0.14 \\ 
-  8 & Cells Cultured fibroblasts & 2049 & 0.01 & 0.02 & 0.01 & 0.18 \\ 
-  9 & Thyroid & 2049 & 0.01 & 0.02 & 0.02 & 0.19 \\ 
-  10 & Kidney Cortex & 2049 & 0.01 & 0.02 & 0.02 & 0.20 \\ 
-  11 & Uterus & 2049 & 0.01 & 0.03 & 0.02 & 0.21 \\ 
-  12 & Bladder  & 2049 & 0.02 & 0.03 & 0.02 & 0.24 \\ 
-  13 & Artery Coronary & 2049 & 0.01 & 0.02 & 0.02 & 0.28 \\ 
-  14 & Brain Frontal Cortex BA9 & 2049 & 0.01 & 0.01 & 0.01 & 0.28 \\ 
-  15 & Heart Atrial Appendage & 2049 & 0.01 & 0.01 & 0.02 & 0.31 \\ 
-  16 & Brain Hypothalamus & 2049 & 0.01 & 0.01 & 0.01 & 0.34 \\ 
-  17 & Brain Anterior cing. & 2049 & 0.00 & 0.01 & 0.01 & 0.34 \\ 
-  18 & Brain Cortex & 2049 & 0.00 & 0.01 & 0.01 & 0.36 \\ 
-  19 & Brain Hippocampus & 2049 & 0.00 & 0.00 & 0.01 & 0.42 \\ 
-  20 & Breast Mammary Tissue & 2049 & 0.00 & 0.01 & 0.02 & 0.43 \\ 
-  21 & Skin Sun Exposed Lower leg & 2049 & 0.00 & 0.00 & 0.01 & 0.43 \\ 
-  22 & Skin Not Sun Exposed Suprapu... & 2049 & 0.00 & 0.00 & 0.01 & 0.44 \\ 
-  23 & Adipose Subcutaneous & 2049 & 0.00 & 0.00 & 0.02 & 0.46 \\ 
-  24 & Vagina  & 2049 & 0.00 & 0.00 & 0.02 & 0.47 \\ 
-  25 & Nerve Tibial  & 2049 & 0.00 & 0.00 & 0.02 & 0.47 \\ 
-  26 & Pituitary  & 2049 & -0.00 & -0.00 & 0.01 & 0.50 \\ 
-  27 & Brain Amygdala & 2049 & -0.00 & -0.00 & 0.01 & 0.51 \\ 
-  28 & Adrenal Gland & 2049 & -0.00 & -0.00 & 0.02 & 0.52 \\ 
-  29 & Brain Nucleus accumbens basa... & 2049 & -0.00 & -0.00 & 0.01 & 0.53 \\ 
-  30 & Cervix Ectocervix & 2049 & -0.00 & -0.00 & 0.02 & 0.55 \\ 
-  31 & Testis  & 2049 & -0.00 & -0.00 & 0.01 & 0.56 \\ 
-  32 & Stomach  & 2049 & -0.00 & -0.01 & 0.02 & 0.56 \\ 
-  33 & Brain Substantia nigra & 2049 & -0.00 & -0.00 & 0.01 & 0.56 \\ 
-  34 & Brain Spinal cord cervical c... & 2049 & -0.00 & -0.00 & 0.01 & 0.59 \\ 
-  35 & Liver & 2049 & -0.00 & -0.00 & 0.01 & 0.60 \\ 
-  36 & Adipose Visceral Omentum & 2049 & -0.00 & -0.01 & 0.02 & 0.61 \\ 
-  37 & Lung & 2049 & -0.01 & -0.01 & 0.02 & 0.64 \\ 
-  38 & Minor Salivary Gland & 2049 & -0.01 & -0.01 & 0.02 & 0.65 \\ 
-  39 & Brain Caudate basal ganglia & 2049 & -0.01 & -0.01 & 0.01 & 0.65 \\ 
-  40 & Pancreas & 2049 & -0.01 & -0.01 & 0.01 & 0.66 \\ 
-  41 & Colon Transverse & 2049 & -0.01 & -0.01 & 0.02 & 0.67 \\ 
-  42 & Whole Blood & 2049 & -0.00 & -0.01 & 0.01 & 0.67 \\ 
-  43 & Esophagus Mucosa & 2049 & -0.01 & -0.01 & 0.01 & 0.68 \\ 
-  44 & Brain Putamen basal ganglia & 2049 & -0.01 & -0.01 & 0.01 & 0.69 \\ 
-  45 & Cervix Endocervix & 2049 & -0.01 & -0.02 & 0.02 & 0.70 \\ 
-  46 & Ovary & 2049 & -0.01 & -0.02 & 0.02 & 0.72 \\ 
-  47 & Heart Left Ventricle & 2049 & -0.01 & -0.02 & 0.02 & 0.80 \\ 
-  48 & Prostate & 2049 & -0.02 & -0.03 & 0.02 & 0.81 \\ 
-  49 & Brain Cerebellar Hemisphere & 2049 & -0.01 & -0.02 & 0.01 & 0.85 \\ 
-  50 & Brain Cerebellum & 2049 & -0.01 & -0.02 & 0.01 & 0.86 \\ 
-  51 & Fallopian Tube & 2049 & -0.02 & -0.04 & 0.02 & 0.89 \\ 
-  52 & Small Intestine Terminal Ile... & 2049 & -0.02 & -0.04 & 0.02 & 0.91 \\ 
-  53 & Cells EBV-transformed lympho... & 2049 & -0.01 & -0.02 & 0.01 & 0.94 \\ 
-  54 & Spleen & 2049 & -0.02 & -0.04 & 0.01 & 0.95 \\ 
+Muscle Skeletal & 2049 & 0.021 & 0.038 & 0.011 & 0.025 \\ 
+  Esophagus Muscularis & 2049 & 0.03 & 0.054 & 0.019 & 0.054 \\ 
+  Artery Tibial  & 2049 & 0.022 & 0.043 & 0.014 & 0.06 \\ 
+  Esophagus Gastroesophageal J.. & 2049 & 0.027 & 0.05 & 0.019 & 0.08 \\ 
+  Colon Sigmoid & 2049 & 0.026 & 0.046 & 0.019 & 0.086 \\ 
+  Artery Aorta  & 2049 & 0.02 & 0.037 & 0.015 & 0.09 \\ 
+  Kidney Medulla & 2049 & 0.017 & 0.028 & 0.016 & 0.14 \\ 
+  Cells Cultured fibroblasts & 2049 & 0.0092 & 0.018 & 0.01 & 0.18 \\ 
+  Thyroid & 2049 & 0.014 & 0.025 & 0.016 & 0.19 \\ 
+  Kidney Cortex & 2049 & 0.013 & 0.021 & 0.015 & 0.2 \\ 
+  Uterus & 2049 & 0.014 & 0.026 & 0.017 & 0.21 \\ 
+  Bladder  & 2049 & 0.015 & 0.027 & 0.021 & 0.24 \\ 
+  Artery Coronary & 2049 & 0.01 & 0.019 & 0.018 & 0.28 \\ 
+  Brain Frontal Cortex BA9 & 2049 & 0.0066 & 0.011 & 0.011 & 0.28 \\ 
+  Heart Atrial Appendage & 2049 & 0.0082 & 0.013 & 0.016 & 0.31 \\ 
+  Brain Hypothalamus & 2049 & 0.0055 & 0.0086 & 0.014 & 0.34 \\ 
+  Brain Anterior cingulate cor... & 2049 & 0.0049 & 0.0079 & 0.012 & 0.34 \\ 
+  Brain Cortex & 2049 & 0.0042 & 0.0069 & 0.012 & 0.36 \\ 
+  Brain Hippocampus & 2049 & 0.0026 & 0.0041 & 0.013 & 0.42 \\ 
+  Breast Mammary Tissue & 2049 & 0.0039 & 0.0069 & 0.021 & 0.43 \\ 
+  Skin Sun Exposed Lower leg & 2049 & 0.0027 & 0.0048 & 0.015 & 0.43 \\ 
+  Skin Not Sun Exposed Suprapu... & 2049 & 0.0024 & 0.0042 & 0.015 & 0.44 \\ 
+  Adipose Subcutaneous & 2049 & 0.0019 & 0.0035 & 0.017 & 0.46 \\ 
+  Vagina  & 2049 & 0.0017 & 0.0029 & 0.019 & 0.47 \\ 
+  Nerve Tibial  & 2049 & 0.0012 & 0.0021 & 0.016 & 0.47 \\ 
+  Pituitary  & 2049 & -0.0001 & -0.0002 & 0.014 & 0.5 \\ 
+  Brain Amygdala & 2049 & -0.0003 & -0.0005 & 0.013 & 0.51 \\ 
+  Adrenal Gland & 2049 & -0.001 & -0.0017 & 0.016 & 0.52 \\ 
+  Brain Nucleus accumbens basa... & 2049 & -0.0008 & -0.0013 & 0.013 & 0.53 \\ 
+  Cervix Ectocervix & 2049 & -0.0024 & -0.0043 & 0.019 & 0.55 \\ 
+  Testis  & 2049 & -0.0015 & -0.0023 & 0.01 & 0.56 \\ 
+  Stomach  & 2049 & -0.0031 & -0.0052 & 0.02 & 0.56 \\ 
+  Brain Substantia nigra & 2049 & -0.0021 & -0.0034 & 0.014 & 0.56 \\ 
+  Brain Spinal cord cervical c... & 2049 & -0.003 & -0.0048 & 0.014 & 0.59 \\ 
+  Liver & 2049 & -0.0026 & -0.0044 & 0.01 & 0.6 \\ 
+  Adipose Visceral Omentum & 2049 & -0.0048 & -0.0087 & 0.018 & 0.61 \\ 
+  Lung & 2049 & -0.0057 & -0.01 & 0.016 & 0.64 \\ 
+  Minor Salivary Gland & 2049 & -0.0069 & -0.012 & 0.018 & 0.65 \\ 
+  Brain Caudate basal ganglia & 2049 & -0.0051 & -0.008 & 0.013 & 0.65 \\ 
+  Pancreas & 2049 & -0.0059 & -0.0091 & 0.014 & 0.66 \\ 
+  Colon Transverse & 2049 & -0.0087 & -0.015 & 0.02 & 0.67 \\ 
+  Whole Blood & 2049 & -0.004 & -0.007 & 0.0089 & 0.67 \\ 
+  Esophagus Mucosa & 2049 & -0.0062 & -0.011 & 0.014 & 0.68 \\ 
+  Brain Putamen basal ganglia & 2049 & -0.0066 & -0.01 & 0.013 & 0.69 \\ 
+  Cervix Endocervix & 2049 & -0.0097 & -0.017 & 0.019 & 0.7 \\ 
+  Ovary & 2049 & -0.0089 & -0.016 & 0.015 & 0.72 \\ 
+  Heart Left Ventricle & 2049 & -0.013 & -0.02 & 0.015 & 0.8 \\ 
+  Prostate & 2049 & -0.018 & -0.03 & 0.021 & 0.81 \\ 
+  Brain Cerebellar Hemisphere & 2049 & -0.0095 & -0.018 & 0.0093 & 0.85 \\ 
+  Brain Cerebellum & 2049 & -0.011 & -0.02 & 0.0097 & 0.86 \\ 
+  Fallopian Tube & 2049 & -0.024 & -0.042 & 0.02 & 0.89 \\ 
+  Small Intestine Terminal Ile... & 2049 & -0.024 & -0.04 & 0.018 & 0.91 \\ 
+  Cells EBV-transformed lympho... & 2049 & -0.011 & -0.024 & 0.0072 & 0.94 \\ 
+  Spleen & 2049 & -0.021 & -0.038 & 0.013 & 0.95 \\ 
    \hline
- \vspace{-151pt}
 \end{tabular}
+\thispagestyle{empty}
 \end{table}
 
 \begin{table}[h!]
 \renewcommand{\thetable}{S\arabic{table}}
 \centering
-\caption{Prediciton results for 74,000 top independent loci in each method}
-\resizebox{\textwidth}{!}{\begin{tabular}{rlrrrrrr}
+\tiny
+\caption{Prediction of height using 74,000 most significant independent loci and the corresponding intersecting set of variants for each method}
+\resizebox{.65\textwidth}{!}{\begin{tabular}{rlrr}
   \hline
- & Set & Threshold & $R^2$ & P & Coefficient & Standard.Error & Num SNP \\
+Method & $R^2$ & se \\ 
   \hline
-1 & fastGWA & 0.00 & 0.13 &   0 & 8956.95 & 80.34 & 15750 \\
-  2 & fastGWA & 0.05 & 0.13 &   0 & 29309.80 & 259.44 & 72216 \\
-  3 & fastGWA & 0.10 & 0.13 &   0 & 29886.20 & 264.36 & 74000 \\
-  4 & PGS-LMM & 0.00 & 0.13 &   0 & 11044.80 & 97.52 & 17856 \\
-  5 & PGS-LMM & 0.05 & 0.14 &   0 & 35111.00 & 298.84 & 74000 \\
+  \textbf{Top 74,000 variants}\\
+fastGWA & 0.1296 & 0.0021 \\ 
+  PGS-LMM & 0.1385 & 0.0022 \\ 
+   \hline
+
+   \textbf{37,514 intersecting variants} \\
+fastGWA & 0.1177 & 0.0021\\ 
+  PGS-LMM & 0.1192 & 0.0021 \\ 
    \hline
 \end{tabular}}
+\thispagestyle{empty}
 \end{table}
 
 \end{document}
