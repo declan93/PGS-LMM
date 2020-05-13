@@ -1,6 +1,6 @@
 # PGS-LMM
 
-Example pipeline for implementing the PGS-LMM method defined in *Publication* 
+Example pipeline for implementing the PGS-LMM method defined in *** 
 
 Edit the config file to set absolute paths to the required files and software. 
 
