@@ -1,6 +1,4 @@
 # PGS-LMM
-Example pipeline for implementing the PGS-LMM method defined in *** 
-
 This pipeline is written for a HPC system running SLURM resource scheduler but can be simply modified for other schedulers such as `SGE`.
 
 The pipeline assumes the starting point is chromosome genotype data in pfile format. 
