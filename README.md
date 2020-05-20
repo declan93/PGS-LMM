@@ -53,8 +53,6 @@ Brief summary of each script
 #### FastGwasPGS.sh
 > Run fastGWA per chromosome with PGS-LOCO score included as fixed effect
 
-Currently the pipeline will generate LOCO covariate files on the fly for 10 PCS, age, sex, batch and centre. Any deviation from these covariates will require the user change the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh` 
-
 ## Dependenies 
 
 - `plink2`
@@ -62,5 +60,8 @@ Currently the pipeline will generate LOCO covariate files on the fly for 10 PCS,
 - `fastGWA`
 - `PRSice2`
 - `SBAYESR` **optional*
+
+## Limitations
+Currently the pipeline will generate LOCO covariate files on the fly for 10 PCS, age, sex, batch and centre. Any deviation from these covariates will require the user change the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh` 
 
 The user can opt to use `SBayesR` instead of `PRSice` by following the instructions in `pipeline.sh` and editing the releavant scripts
