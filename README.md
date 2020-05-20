@@ -15,15 +15,15 @@ This will submit the job scripts to the HPC scheduler with a previous job comple
 
 ## scripts
 #### EXTRACT_QC.sh
-Extract sample set from pfile input
+> Extract sample set from pfile input
 
-Multiple genotype filtering 
-- Minor allele frequency, Hardy-Weinberg equilibrium, Imputation quality, genotype missingness, LD-prune
+> Multiple genotype filtering 
+> - Minor allele frequency, Hardy-Weinberg equilibrium, Imputation quality, genotype missingness, LD-prune
 
-Create LD-pruned variant set
+> Create LD-pruned variant set
 
 #### PCA.sh
-Concatenate LD-pruned SNP set
+> Concatenate LD-pruned SNP set
 
 Perform PCA analysis
 
