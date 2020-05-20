@@ -12,14 +12,16 @@ Add absolute path to software and data files to 'config.txt' as well as required
 
 This will submit the job scripts to the HPC scheduler with a previous job completion dependency for each script.
 
-## scripts
-Brief summary of each script
+## Job Scripts
+Brief summary of each script 
+
+All QC thresholds are defined in `config.txt`
 
 #### EXTRACT_QC.sh
 > Extract sample set from pfile input
 
 > Multiple genotype filtering 
-> - Minor allele frequency, Hardy-Weinberg equilibrium, Imputation quality, genotype missingness, LD-prune
+> - Minor allele frequency, Hardy-Weinberg equilibrium, Imputation quality, genotype missingness, LD-pruning
 
 > Create LD-pruned variant set
 
