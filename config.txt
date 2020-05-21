@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #########FILES
-age=                      # Absolute path to ukbiobank age file in format ID VALUE with no header
-centre=                   # Absolute path to ukbiobank centre file in format ID VALUE with no header
-batch=                    # Absolute path to ukbiobank batch file in format ID VALUE with no header
-sex=                      # Absolute path to ukbiobank sex file in format ID VALUE with no header
-SAMP=                     # Absolute path to ukbiobank sample file in format FID IID with no header these will be extracted from the initial UKbiobank data  
-GT_DIR=                   # Absolute path to ukbiobank genotype data directory containg per chromosome plink2 pfile formatted data
-PHENO=                    # Absolute path to ukbiobank sample file in format FID IID & and TRAIT INCLUDE HEADER TRAIT must be the same as defined in the variables section
+age=                      # Absolute path to age file in format ID VALUE with no header
+centre=                   # Absolute path to genotyping centre file in format ID VALUE with no header
+batch=                    # Absolute path to genotype batch file in format ID VALUE with no header
+sex=                      # Absolute path to sex file in format ID VALUE with no header
+SAMP=                     # Absolute path to sample file in format FID IID with no header these will be extracted from the initial UKbiobank data  
+GT_DIR=                   # Absolute path to genotype data directory containg per chromosome plink2 pfile formatted data
+PHENO=                    # Absolute path to sample file in format FID IID & and TRAIT INCLUDE HEADER TRAIT must be the same as defined in the variables section
 
 #### VARIABLES passed to each script
 
