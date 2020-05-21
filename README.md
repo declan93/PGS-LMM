@@ -10,7 +10,7 @@ Add absolute path to software and data files to 'config.txt' as well as required
 This will submit the job scripts to the HPC scheduler with a previous job completion dependency for each script.
 
 ## Limitations
-Currently the pipeline will generate covariate files on the fly for 10 PCs, age, sex, genotype batch and assessment centre. Any deviation from these covariates will require the user to update the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh` 
+Currently the pipeline will generate covariate files on the fly for 10 PCs, age, sex, genotyping batch and assessment centre. Any deviation from these covariates will require the user to update the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh` 
 
 The user can opt to use `SBayesR` instead of `PRSice` by following the instructions commented in `pipeline.sh` and editing the releavant scripts.
 
