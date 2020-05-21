@@ -12,6 +12,11 @@ Add absolute path to software and data files to 'config.txt' as well as required
 
 This will submit the job scripts to the HPC scheduler with a previous job completion dependency for each script.
 
+## Limitations
+Currently the pipeline will generate LOCO covariate files on the fly for 10 PCS, age, sex, batch and centre. Any deviation from these covariates will require the user change the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh` 
+
+The user can opt to use `SBayesR` instead of `PRSice` by following the instructions in `pipeline.sh` and editing the releavant scripts
+
 ## Job Scripts
 Brief summary of each script 
 
@@ -53,10 +58,6 @@ All QC thresholds are defined in `config.txt`
 #### FastGwasPGS.sh
 > Run fastGWA per chromosome with PGS-LOCO score included as fixed effect
 
-## Limitations
-Currently the pipeline will generate LOCO covariate files on the fly for 10 PCS, age, sex, batch and centre. Any deviation from these covariates will require the user change the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh` 
-
-The user can opt to use `SBayesR` instead of `PRSice` by following the instructions in `pipeline.sh` and editing the releavant scripts
 
 ## Dependenies 
 
