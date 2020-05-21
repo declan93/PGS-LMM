@@ -1,9 +1,6 @@
 # PGS-LMM
-Linear mixed-models for association studies fail to account properly for off-target genetic effects. We found that inclusion of a leave-one-chromosome-out polygenic score (LOCO-PGS) as a fixed effect covariate increases statistical power in GWAS. We term this methodology PGS-LMM. 
 
-This pipeline is written for a HPC system running SLURM resource scheduler but can be simply modified for other schedulers such as `SGE`.
-
-The pipeline assumes the starting point is chromosome genotype data in pfile format. 
+We have found that including the polyenic score (PGS), calculated on a leave-one-chromosome-out (LOCO) basis, as a fixed effect significantly improves the power of GWAS. The scripts here are intended to facilitate the calculation of the LOCO PGS and its inclusion as a fixed effect in a Linear Mixed Model (LMM) implemented with fastGWA.  The pipeline is written for a HPC system running SLURM resource scheduler but can be modified easily for use with other schedulers such as `SGE`.
 
 ## Usage 
 Add absolute path to software and data files to 'config.txt' as well as required variables 
@@ -13,7 +10,7 @@ Add absolute path to software and data files to 'config.txt' as well as required
 This will submit the job scripts to the HPC scheduler with a previous job completion dependency for each script.
 
 ## Limitations
-Currently the pipeline will generate covariate files on the fly for 10 PCs, age, sex, batch and centre. Any deviation from these covariates will require the user update the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh` 
+Currently the pipeline will generate covariate files on the fly for 10 PCs, age, sex, batch and centre. Any deviation from these covariates will require the user to update the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh` 
 
 The user can opt to use `SBayesR` instead of `PRSice` by following the instructions commented in `pipeline.sh` and editing the releavant scripts.
 
@@ -23,10 +20,10 @@ Brief summary of each script
 All QC thresholds are defined in `config.txt`
 
 #### EXTRACT_QC.sh
-> Extract sample set from pfile input with multiple genotype filtering to create an association variant set and PCA/GRM set 
+> Extract sample set from pfile input and apply filters to create an association variant set and PCA/GRM set 
 > - Minor allele frequency, Hardy-Weinberg equilibrium, Imputation quality, genotype missingness, LD-pruning
 
-> Create LD-pruned variant set of variants for PCA and GRM calculation
+> Create LD-pruned set of variants for PCA and GRM calculation
 
 #### PCA.sh
 > Concatenate LD-pruned SNPs set into one population level dataset
@@ -39,13 +36,13 @@ All QC thresholds are defined in `config.txt`
 #### makeSparseGRM.sh
 > Concatenate multipart GRM 
 
-> Create sparse GRM sample
+> Create sparse GRM 
 
 #### makeCovar.sh
 > Create covariate file 
 
 #### FastGwaFull.sh
-> Run initial fastGWA analysis on 
+> Run initial fastGWA analysis without PGS effect 
 
 > Create LOCO summary statistic files
 
