@@ -1,4 +1,6 @@
 # PGS-LMM
+Linear mixed-models for association studies fail to account properly for off-target genetic effects. We found that inclusion of a leave-one-chromosome-out polygenic score (LOCO-PGS) as a fixed effect covariate increases statistical power in GWAS. We term this methodology PGS-LMM. 
+
 This pipeline is written for a HPC system running SLURM resource scheduler but can be simply modified for other schedulers such as `SGE`.
 
 The pipeline assumes the starting point is chromosome genotype data in pfile format. 
@@ -16,17 +18,15 @@ Brief summary of each script
 All QC thresholds are defined in `config.txt`
 
 #### EXTRACT_QC.sh
-> Extract sample set from pfile input
-
-> Multiple genotype filtering 
+> Extract sample set from pfile input with multiple genotype filtering to create an association variant set and PCA/GRM set 
 > - Minor allele frequency, Hardy-Weinberg equilibrium, Imputation quality, genotype missingness, LD-pruning
 
-> Create LD-pruned variant set
+> Create LD-pruned variant set of variants for PCA and GRM calculation
 
 #### PCA.sh
-> Concatenate LD-pruned SNP set
+> Concatenate LD-pruned SNPs set into one population level dataset
 
-> Perform PCA analysis
+> Perform PCA analysis on LD-pruned set
 
 #### makeGRM.sh
 > Make multipart genetic relationship matrix (GRM) on LD-pruned SNP set
@@ -40,7 +40,7 @@ All QC thresholds are defined in `config.txt`
 > Create covariate file 
 
 #### FastGwaFull.sh
-> Run fastGWA analysis
+> Run initial fastGWA analysis on 
 
 > Create LOCO summary statistic files
 
