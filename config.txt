@@ -38,8 +38,8 @@ PRSice=""
 GT=${PWD}/${PROJ}/GT  # This is where intermediate Genotypes + pca files will be stored
 grm=${PWD}/${PROJ}/grm  # GRM parts and concatenated GRM
 results=${PWD}/${PROJ}/results  # GWAS results are sent here.
-traits=${PWD}/${PROJ}/traits  # traits will be stored here
-PGS=${PWD}/${PROJ}/PGS  # risk scores are here
+traits=${PWD}/${PROJ}/traits  # covariates will be stored here
+PGS=${PWD}/${PROJ}/PGS  # PGS scores are stored here
 
 
 mkdir -p logs  # sbatch logs 
