@@ -9,7 +9,7 @@ ggplot(data = d, aes(x=N, y=p)) + geom_point(aes(color=method)) +geom_line(aes(c
 ### Variable number of causal loci 
 ```
 d <- read.table("figure_num_casual.txt",h=T)
-ggplot(data = d, aes(x=N, y=p)) + geom_point(aes(color=method)) +geom_line(aes(colour=method)) + theme_classic() +geom_ribbon(aes(ymin=lwr, ymax=upr,fill=methode), linetype=2, alpha=0.1) + ylab("Prop causal variants recovered") + xlab("Number causal variants recovered")
+ggplot(data = d, aes(x=N, y=p)) + geom_point(aes(color=method)) +geom_line(aes(colour=method)) + theme_classic() +geom_ribbon(aes(ymin=lwr, ymax=upr,fill=method), linetype=2, alpha=0.1) + ylab("Prop causal variants recovered") + xlab("Number causal variants recovered")
 ```
 ### Variable h2
 ```
