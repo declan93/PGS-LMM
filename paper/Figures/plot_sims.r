@@ -76,14 +76,13 @@ ggsave(pr2, filename = "dROC_PGS_LMM_VS_BOLT.png",dpi=350)
 
 
 ## fig1a 
-read.table("fig1a.txt",h=T)
+load("figure1.rda")
 p_arr <- ggplot(d, aes(x=fastGWA/1000, y=`fastGWA-PGS`/1000))+ geom_point() +geom_abline() +
 geom_hline(yintercept=median(d$"fastGWA-PGS"/1000), linetype="dotted", color="#7CAE00", size=1) +ylim(.4,.55) + xlim(.4,.48) + 
 geom_hline(yintercept=median(d$fastGWA/1000), linetype="dotted", color="grey", size=1) + xlab("fastGWA")  + ylab("fastGWA-PGS") + 
 theme_classic()
 
 ## fig1b 
-read.table("fig1b.txt",h=T)
 p <- ggplot(c1, aes(x=variable, y=value/1000, colour=variable)) + geom_boxplot(outlier.shape=NA) + xlab("Method") + 
 ylab("Proportion of causal variants")+ theme(legend.position = "none") +
 geom_hline(yintercept=median(c1[c1$variable=="fastGWA",2]/1000), linetype="dotted", color="#00BFC4") +
@@ -93,4 +92,4 @@ geom_hline(yintercept=median(c1[c1$variable=="fastGWA-PGS",2]/1000), linetype="d
 theme(legend.position="none") + ylim(0.4,0.6)
 
 fig1 <- ggarrange(p_arr,p,nrow=2,labels=c("A","B"))
-ggsave("fig.png",fig1,dpi=350)
+ggsave("fig1.png",fig1,dpi=350)
