@@ -2,11 +2,7 @@
 library(ggplot2)
 library(ggpubr)
 library(gridExtra)
-setwd("/home/declan/work/PRSWAS/Revision/Data/")
 
-theme_set(
-  theme_classic(base_size = 8)
-)
 
 d <- read.table("figure_Nsims.txt",h=T)
 p1 <- ggplot(data = d, aes(x=N, y=p)) + 
