@@ -2,7 +2,7 @@
 library(ggplot2)
 library(ggpubr)
 library(gridExtra)
-
+library(venn)
 
 ## fig1a 
 load("figure1.rda")
@@ -62,7 +62,7 @@ panel_fig2 <- annotate_figure(ggarrange(pr3,pr1, nrow = 2,labels=c("A","B")),lef
 ## fig 3/4
 
 d <- read.table("figure_Nsims.txt",h=T)
-p1 <- ggplot(data = d, aes(x=N, y=p)) + 
+fig4 <- ggplot(data = d, aes(x=N, y=p)) + 
   geom_point(aes(color=method)) +
   geom_line(aes(colour=method)) + theme_classic() +
   geom_ribbon(aes(ymin=lwr, ymax=upr,fill=method), linetype=2, alpha=0.1) + 
@@ -87,10 +87,7 @@ p3 <- ggplot(data = d3, aes(x=h2, y=p)) +
   geom_ribbon(aes(ymin=lwr, ymax=upr,fill=method), linetype=2, alpha=0.1) +
   ylab("Prop causal variants recovered")
 
-p4 <- ggarrange(p3,p2, nrow = 2,labels=c("A","B"),font.label = list(size = 10, color = "black", face ="bold", family = NULL))
-ggsave(p4,filename ="fig_3_rev.png",dpi = 350)
-
-ggsave(p1, filename = "fig_4_rev.png",dpi=350)
+fig3 <- ggarrange(p3,p2, nrow = 2,labels=c("A","B"),font.label = list(size = 10, color = "black", face ="bold", family = NULL))
 
 
 ## prediction plots (fig5 & supple_fig)
@@ -122,10 +119,28 @@ p80 <- ggplot(data=prs80, aes(x=Threshold, y=R2, col=Set)) + geom_line() +
   geom_errorbar(aes(ymin=R2-(2*se), ymax=R2+(2*se)), width=.02)+ 
   labs(color = "Method") +theme_classic2()
 
-panel_80 <- ggarrange(p80,s80,nrow=2,labels=c("A","B"))
-panel_20 <- ggarrange(p20,s20,nrow=2,labels=c("A","B"))
+fig5 <- ggarrange(p80,s80,nrow=2,labels=c("A","B"))
+sfig <- ggarrange(p20,s20,nrow=2,labels=c("A","B"))
 
+## supp fig1
+st <- read.table("sup_fig_pval_comp.txt", h=T)
+colnames(st) <- c("fastGWA-PGS","fastGWA")
+sfig1 <- ggplot(st[seq(1,nrow(st),50),]) + geom_point(aes(x=fastGWA, y=`fastGWA-PGS`)) + 
+  geom_abline(intercept = 0, slope = 1) + 
+  xlab("-log10 fastGWA p-values") + ylab("-log10 fastGWA-PGS p-values") + 
+  theme_classic()
 
+## supp Fig2
+load("v_list.rda")
+png("sFig2.png")
+venn(v_list,zcolor="style", snames=c("fastGWA","PGS-LMM"),box=F)
+dev.off()
 
-
-
+f4 <- read.table("sf4.txt", h=T)
+sfig3 <- f4 %>% na.omit() %>% group_by(group, bin) %>% summarise(n = n()) %>% 
+  group_by(group) %>% mutate(y = n/sum(n)) %>% ggplot()+ 
+  geom_col(aes(y=y, x = bin, fill = as.factor(group)), position="dodge") + 
+  scale_y_continuous(labels=scales::percent_format()) + xlab("Allele frequency bins") + 
+  ylab("Percentage variants") + 
+  labs(fill="Significance set") + scale_x_discrete(labels=c("<1%","1-5%","5-10%","10-20%","20-50%")) + 
+  theme(legend.position = c(0.099, 0.82)) + theme_classic2()
