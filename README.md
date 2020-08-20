@@ -1,7 +1,7 @@
 # PGS-LMM 
-#### short hand for a linear mixed model using LOCO PGS as fix3ed effects
+#### short hand for a linear mixed model using LOCO PGS as fixed effects
 
-We have found that including the polyenic score (PGS), calculated on a leave-one-chromosome-out (LOCO) basis, as a fixed effect significantly improves the power of GWAS. The scripts here are intended to facilitate the calculation of the LOCO PGS and its inclusion as a fixed effect in a Linear Mixed Model (LMM) implemented with fastGWA.  The pipeline is written for a HPC system running SLURM resource scheduler but can be modified easily for use with other schedulers such as `SGE`.
+We have found that including the polyenic score (PGS), calculated on a leave-one-chromosome-out (LOCO) basis, as a fixed effect significantly improves the power of GWAS. The scripts here are intended to facilitate the calculation of the LOCO PGS and its inclusion as a fixed effect in a Linear Mixed Model (LMM) implemented with fastGWA. The pipeline is written for a HPC system running SLURM resource scheduler but can be modified easily for use with other schedulers such as `SGE`.
 
 ## Usage 
 Add absolute path to software and data files to 'config.txt' as well as required variables 
@@ -13,7 +13,7 @@ This will submit the job scripts to the HPC scheduler with a previous job comple
 ## Limitations
 Currently the pipeline will generate covariate files on the fly for 10 PCs, age, sex, genotyping batch and assessment centre. Any deviation from these covariates will require the user to update the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh`. An example of how to add covariates can be found [here](https://github.com/declan93/PGS-LMM/wiki/Adding-Covariates#adding-new-covariates)
 
-The user can opt to use `SBayesR` instead of `PRSice` by following the instructions commented in `pipeline.sh` and editing the releavant scripts.
+The user can opt to use `SBayesR` instead of `PRSice` by following the instructions commented in `pipeline.sh` and editing the relevant scripts.
 
 ## Job Scripts
 Brief summary of each script 
