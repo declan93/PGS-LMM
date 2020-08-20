@@ -1,4 +1,5 @@
-# PGS-LMM
+# PGS-LMM 
+#### short hand for a linear mixed model using LOCO PGS as fix3ed effects
 
 We have found that including the polyenic score (PGS), calculated on a leave-one-chromosome-out (LOCO) basis, as a fixed effect significantly improves the power of GWAS. The scripts here are intended to facilitate the calculation of the LOCO PGS and its inclusion as a fixed effect in a Linear Mixed Model (LMM) implemented with fastGWA.  The pipeline is written for a HPC system running SLURM resource scheduler but can be modified easily for use with other schedulers such as `SGE`.
 
