@@ -5,7 +5,6 @@ library(gridExtra)
 library(venn)
 library(data.table)
 library(scattermore)
-setwd("/home/declan/work/PRSWAS/Revision/Data/")
 
 ## fig1a 
 load("figure1.rda")
@@ -26,7 +25,7 @@ p <- ggplot(c1, aes(x=variable, y=value/1000, colour=variable)) + geom_boxplot(o
   theme(legend.position="none") + ylim(0.4,0.6)
 
 
-ggsave(p_arr, filename = "/home/declan/Latex/PGS_LMM/nat_comms/images/Fig1.png",dpi=500)
+ggsave(p_arr, filename = "Fig1.png",dpi=500)
 
 ### Fig2  & SFig1
 
@@ -63,8 +62,8 @@ pr3 <- ggplot(d,aes(x=x,y=y,colour=colour)) + theme_classic(base_size=10)+ scale
   ylab("") + xlab("")
 
 fig2 <- annotate_figure(ggarrange(pr3,pr1, nrow = 2,labels=c("A","B")),left=text_grob("\U0394 Sensitivity", color = "black", rot = 90,hjust = .2,size=12),bottom=text_grob("Specificity",hjust = 0.2,size=12))
-ggsave(fig2, filename = "/home/declan/Latex/PGS_LMM/nat_comms/images/Fig2.png",dpi=500)
-ggsave(pr2, filename = "/home/declan/Latex/PGS_LMM/nat_comms/images/suppFig1.png",dpi=500)
+ggsave(fig2, filename = "Fig2.png",dpi=500)
+ggsave(pr2, filename = "suppFig1.png",dpi=500)
 
 # Fig3/4
 
@@ -97,9 +96,9 @@ p3 <- ggplot(data = d3, aes(x=h2, y=p)) +
 
 fig3 <- annotate_figure(ggarrange(p3,p2, nrow = 2,labels=c("A","B"),font.label = list(size = 8, color = "black", face ="bold", family = NULL)), left=text_grob("Prop causal variants recovered", size=12, color = "black", rot = 90,hjust = .45))
 
-ggsave(fig3,filename ="/home/declan/Latex/PGS_LMM/nat_comms/images/Fig3.png",dpi = 500)
+ggsave(fig3,filename ="Fig3.png",dpi = 500)
 
-ggsave(fig4, filename = "/home/declan/Latex/PGS_LMM/nat_comms/images/Fig4.png",dpi=500)
+ggsave(fig4, filename = "Fig4.png",dpi=500)
 
 
 
@@ -135,8 +134,8 @@ p80 <- ggplot(data=prs80, aes(x=Threshold, y=R2, col=Set)) + geom_line() +
 fig5 <- ggarrange(p80,s80,nrow=2,labels=c("A","B"))
 panel_20 <- ggarrange(p20,s20,nrow=2,labels=c("A","B"))
 
-ggsave(fig5, filename = "/home/declan/Latex/PGS_LMM/nat_comms/images/Fig5.png",dpi=500)
-ggsave(panel_20, filename = "/home/declan/Latex/PGS_LMM/nat_comms/images/suppFig6.png",dpi=500)
+ggsave(fig5, filename = "Fig5.png",dpi=500)
+ggsave(panel_20, filename = "suppFig6.png",dpi=500)
 
 
 
@@ -148,7 +147,7 @@ ggsave(panel_20, filename = "/home/declan/Latex/PGS_LMM/nat_comms/images/suppFig
 #  geom_abline(intercept = 0, slope = 1) + 
 #  xlab("-log10 fastGWA p-values") + ylab("-log10 fastGWA-PGS p-values") + 
 #  theme_classic()
-#ggsave(sfig1, filename="/home/declan/Latex/PGS_LMM/nat_comms/images/suppFig2.png", dpi=500)
+#ggsave(sfig1, filename="suppFig2.png", dpi=500)
 
 # SFig3
 
@@ -168,7 +167,7 @@ sfig3 <- f3 %>% na.omit() %>% group_by(group, bin) %>% summarise(n = n()) %>%
   labs(fill="Significance set") + scale_x_discrete(labels=c("<1%","1-5%","5-10%","10-20%","20-50%")) + 
   theme(legend.position = c(0.099, 0.82),legend.text = element_text(size = 10)) + theme_classic2()
 
-ggsave(sfig3, filename="/home/declan/Latex/PGS_LMM/nat_comms/images/suppFig4.png", dpi=500)
+ggsave(sfig3, filename="suppFig4.png", dpi=500)
 
 #Sfig7 
 load("figureS7.rda")
