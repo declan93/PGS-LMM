@@ -7,33 +7,38 @@
 \begin{document}
 
 \begin{figure}[h!]
-  \includegraphics[width=0.85\textwidth]{images/SFig1.png}
-  \caption{Distribution of variant significance for PGS-LMM (y-axis) and fastGWA (x-axis)}
+  \includegraphics[width=\textwidth]{images/suppFig1.png}
+  \caption{Difference in sensitivity (between the fastGWA-PGS and Bolt-LMM methods) as a function of specificity. The red line shows the mean difference over all simulations.}
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=0.85\textwidth]{images/SFig2.png}
-  \caption{Venn diagram of significant variants identified by both FastGWA and PGS-LMM }
+  \includegraphics[width=\textwidth]{images/suppFig2.png}
+  \caption{Distribution of variant significance for fastGWA-PGS (y-axis) and fastGWA (x-axis)}
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=0.85\textwidth]{images/SFig3.png}
-  \caption{Minor allele frequency of significant variants identified by the fastGWA method (red), MAF of variants identified by PGS-LMM (green) and MAF of variants identified by the PGS-LMM method but not fastGWA (blue).}
+  \includegraphics[width=\textwidth]{images/suppFig3.png}
+  \caption{Venn diagram of significant variants identified by both FastGWA and fastGWA-PGS }
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=0.85\textwidth]{images/SFig4.png}
+  \includegraphics[width=\textwidth]{images/suppFig4.png}
+  \caption{Minor allele frequency of significant variants identified by the fastGWA method (red), MAF of variants identified by fastGWA-PGS (green) and MAF of variants identified by the fastGWA-PGS method but not fastGWA (blue).}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{images/suppFig5.png}
   \caption{Gene-property analysis for issue specificity PGS-Only variants}
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=0.85\textwidth]{images/SFig5.png}
+  \includegraphics[width=\textwidth]{images/suppFig6.png}
   \caption{P+T prediction (A) across range of p value thresholds for each method Bayesian inference prediction (B) across PIP scores. Summary statistics are calculated on the 20\% training data}
 \end{figure}
 
 \begin{figure}[h!]
-  \includegraphics[width=0.85\textwidth]{images/SFig6.png}
-  \caption{Proportion of causal variants identified by BOLT-LMM, BOLT-LMM PGS-LMM, fastGWA and fastGWA PGS-LMM across 100 simulations}
+  \includegraphics[width=\textwidth]{images/suppFig7.png}
+  \caption{Simulation effect size and phenotype distribution. (A) Effect size distribution for 1000 causal loci with a SNP heritability of 0.5. (B) Simulated phenotype distribution for 100,000 samples}
 \end{figure}
 
 \begin{table}[ht]
@@ -42,7 +47,7 @@
 \caption{Fishers exact test for expected number of variants in each minor allele frequency bin}
 \resizebox{1.2\textwidth}{!}{\begin{tabular}{rlrrrrrlr}
   \hline
- Bin & fastGWA & fastGWA bin & PGS-LMM & PGS-LMM bin & OR & CI & P.value \\ 
+ Bin & fastGWA & fastGWA bin & fastGWA-PGS & fastGWA-PGS bin & OR & CI & P.value \\ 
   \hline
 $<$1\% & 126210 & 1096 & 30682 & 650 & 2.4 & 2.209-2.693 & 5.9E-65 \\ 
 1-5\% & 115763 & 11543 & 28598 & 2734 & 0.96 & 0.9175-1.002 & 0.06 \\ 
@@ -134,12 +139,12 @@ Method & $R^2$ & se \\
   \hline
   \textbf{Top 74,000 variants}\\
 fastGWA & 0.1296 & 0.0021 \\ 
-  PGS-LMM & 0.1385 & 0.0022 \\ 
+  fastGWA-PGS & 0.1385 & 0.0022 \\ 
    \hline
 
    \textbf{37,514 intersecting variants} \\
 fastGWA & 0.1177 & 0.0021\\ 
-  PGS-LMM & 0.1192 & 0.0021 \\ 
+  fastGWA-PGS & 0.1192 & 0.0021 \\ 
    \hline
 \end{tabular}}
 \thispagestyle{empty}
