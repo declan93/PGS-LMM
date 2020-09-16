@@ -5,6 +5,10 @@ library(gridExtra)
 library(venn)
 library(data.table)
 library(scattermore)
+# 95% CI on the R2 of the prediction is calculated as described here https://books.google.ie/books?id=gkalyqTMXNEC&pg=PA88&redir_esc=y#v=onepage&q&f=false
+# where No. predictors = 1 and N = 343487 & 85872 for the 80% & 20% validation sets
+#prs80$SE <- sqrt( ((4*R2*(1-R2)**2) * (343487 -2)**2)  /  (((343487**2 -1)) * (3 + 343487)))
+#prs20$SE <- sqrt( ((4*R2*(1-R2)**2) * (85872 -2)**2)  /  (((85872**2 -1)) * (3 + 85872)))
 
 ## fig1a 
 load("figure1.rda")
