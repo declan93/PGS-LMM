@@ -13,7 +13,6 @@ This will submit the job scripts to the HPC scheduler with a previous job comple
 ## Limitations
 Currently the pipeline will generate covariate files on the fly for 10 PCs, age, sex, genotyping batch and assessment centre. Any deviation from these covariates will require the user to update the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh`. An example of how to add covariates can be found [here](https://github.com/declan93/PGS-LMM/wiki/Adding-Covariates#adding-new-covariates)
 
-The user can opt to use `SBayesR` instead of `PRSice` by following the instructions commented in `pipeline.sh` and editing the relevant scripts.
 
 ## Job Scripts
 Brief summary of each script 
@@ -63,4 +62,4 @@ All QC thresholds are defined in `config.txt`
 - `bgzip`
 - `fastGWA`
 - `PRSice2`
-- `SBAYESR` **optional*
+- `LDpred2` **optional*
