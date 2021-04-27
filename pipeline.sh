@@ -21,13 +21,11 @@ echo "GCTA fastGWA"
 jid6=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid5" source/FastGwaFull.sh)
 
 echo "polygenic score calculation"
-# For SBayesR uncomment sbayes code in PGSLOCO.sh
+# For LDpred2 uncomment Rscript code in PGSLOCO.sh
 jid7=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid6" source/PGSLOCO.sh)
 
 echo "phenotype and LOCO PGS covars"
-#SBayes run makeSbayesPGS.sh
-#SBayes run SBayesPlink.sh jobarray
-## uncomment and comment relevant lines in makePgsCovars.sh
+## uncomment and comment relevant lines in makePgsCovars.sh for LDpred2
 jid8=$(sbatch --export=ALL --parsable --dependency=afterok:"$jid7" -o "logs/MkLocoCovar.out" -J "MkLocoCovar" source/makePgsCovars.sh)
 
 echo "FastGWAS PGS adjusted"
