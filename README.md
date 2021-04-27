@@ -13,6 +13,8 @@ This will submit the job scripts to the HPC scheduler with a previous job comple
 ## Limitations
 Currently the pipeline will generate covariate files on the fly for 10 PCs, age, sex, genotyping batch and assessment centre. Any deviation from these covariates will require the user to update the covariate generating scripts `makeCovars.sh` & `makePgsCovars.sh`. An example of how to add covariates can be found [here](https://github.com/declan93/PGS-LMM/wiki/Adding-Covariates#adding-new-covariates)
 
+## LDpred2 
+LDpred2 can be used for inferring the LOCO PGS. Follow the instructions [here](https://github.com/declan93/PGS-LMM/wiki/LDpred2#ldpred2) on how to set up the genotype objects. This pipeline has been written to allow a large number of phenotypes to be processed relatively quickly by generating LOCO objects once.  
 
 ## Job Scripts
 Brief summary of each script 
