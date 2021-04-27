@@ -40,7 +40,7 @@ grm=${PWD}/${PROJ}/grm  # GRM parts and concatenated GRM
 results=${PWD}/${PROJ}/results  # GWAS results are sent here.
 traits=${PWD}/${PROJ}/traits  # covariates will be stored here
 PGS=${PWD}/${PROJ}/PGS  # PGS scores are stored here
-
+Pred=${PWD}/${PROJ}/Pred  # LDpred2 LOCO PGS scores are stored here
 
 mkdir -p logs  # sbatch logs 
 mkdir -p $GT
